@@ -185,6 +185,136 @@ $(document).ready(function(){
 });
 </script> </div>
 <br/><div style="line-height: 1.1em; font-size:11px;">Die Stammdaten zu diesem Spital haben wir am 31.03.2024 letztmals aktualisiert. Die Herkunftsperioden und Quellen der Qualitätsdaten finden Sie, indem Sie den Namen einer Kennzahl antippen-/klicken.</div></div>
-<div id="backdrop" style="visibility: hidden; opacity: 0; transition: visibility 0.3s linear,opacity 0.3s linear; position: fixed; left: 0px; top: 0px; height: 100%; width: 100%; background-color: black; z-index: 80;"></div>
+<div id="backdrop" style="visibility: hidden; opacity: 0; transition: visibility 0.3s linear,opacity 0.3s linear; position: fixed; left: 0px; top: 0px; height: 100%; width: 100%; background-color: black; z-index: 80;"></div> 
 <div id="donate_container" style="display:none; -webkit-transition: max-height 1s ease-in-out; -moz-transition: max-height 1s ease-in-out; -o-transition: max-height 1s ease-in-out; transition: max-height 1s ease-in-out; max-width: 420px; position: fixed; right: 5px; bottom: 0; background-color: #eaeaea; z-index: 120;">
-<button id="donat
+<button id="donate_button" style="      display: flex; gap:6px; background-color: #ed2c2c; border: none; color: #fff; font-weight: 640; top: -46px; right: 5px; position: absolute; padding: 6px 11px; font-size: 1.3em; -moz-border-radius: 3px; border-radius: 3px; -webkit-transition: all .3s cubic-bezier(.25,.8,.25,1); transition: all .3s cubic-bezier(.25,.8,.25,1); -webkit-box-shadow: 0 0 20px rgb(0 0 0 / 30%); -moz-box-shadow: 0 0 7px rgba(0,0,0,0.3); box-shadow: 0 0 7px rgb(0 0 0 / 30%);" title="Bitte unterstützen Sie unseren unabhängigen Spitalvergleich mit einer kleinen oder grösseren Spende." type="button">
+<svg viewbox="0 0 107 90" width="40" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css"> .st0{fill:#010101;}</style>
+<path class="st0" d="M8.7,45.2c1.6,0.6,0.8,2.4-0.4,2.9c-2.2,0.7-4.7,0.5-6.7-0.5c-1.2-0.6-1.9-1.8-1.5-3c0.3-1,1.1-1.7,2.1-2 c1-0.3,2.2,0,2.9,0.7c0.2,0.2,0.5,0.5,0.7,0.7C6,44,6.1,44,6.1,44.1c0.1,0,0.3,0.1,0.4,0.2C7.2,44.6,7.9,44.9,8.7,45.2z M13.6,35.1 c-5-3-8.5-6.9-12-11C-1,21,4.8,17.1,7.5,19.9c3.5,3.8,4.2,9.3,8,12.9C16.7,33.9,15.2,36,13.6,35.1z M48.9,68.8 c-2.9,1.7-7.4,3.4-14.5,4.4c-3.2,0.9-5.9,2.1-7.4,3.7c-0.3,0.3-0.7,0.6-1.2,0.7c-0.3,0.1-0.5,0.2-0.7,0.3C24,78.2,23,77.8,22.6,77 c-0.2-0.5-0.1-1,0.2-1.5c2.2-3.2-4-12.1-4.8-15.6c-1-5-0.4-10.3,4.8-13.4c3.8-2.5,9.9-4.6,13,0c1.6,2.2,2.5,4.7,2.3,7.3 c2.2-1.2,4.7-1.9,7.3-2.1c5.1-0.1,8.6,4,9.2,8.1C55.3,64.3,52.8,66.9,48.9,68.8z M27.7,25.4c0.2,0.7-0.2,1.3-1,1.5 c-0.7,0.2-1.5-0.2-1.7-0.9c-0.9-2.1-2.1-4.3-2.9-6.5s-2.7-5.3-1.5-7.6c0.8-1.2,2.4-1.8,3.9-1.5C30.6,12.5,27,21.3,27.7,25.4 L27.7,25.4z M55.1,3.6c-0.3,4.3-3.6,9.3-5.6,13c-2.2,4.3-4.8,8.4-7.1,12.6c-0.4,0.6-1.2,0.8-1.8,0.4c-0.5-0.3-0.8-0.8-0.6-1.3 c1.5-4.5,2-9.3,3-14c0.9-4,1.8-10.1,4.9-13.3C50.3-1.2,55.4,0.3,55.1,3.6L55.1,3.6z M82.3,25.1c-2,3.8-7.6,5.9-11.4,7.7 c-5,2.5-10.3,4.7-15.2,7.4c-1.5,0.8-3.4-1.1-2-2.2c4.3-3.3,8.6-6.7,13.1-9.8c3.4-2.5,7.1-6.5,11.5-7.5c1.9-0.5,3.8,0.5,4.3,2.1 C82.8,23.6,82.7,24.4,82.3,25.1L82.3,25.1z M76.8,48.5c3-0.5,8.7-2.7,11.4-1.1c1.7,0.8,2.4,2.7,1.5,4.3c-2,3.4-8.5,2.4-12,2.3 c-4.9-0.2-9.8-1-14.6-0.9c-1.3,0-1.8-1.9-0.4-2.1C67.4,50.3,72.1,49.3,76.8,48.5L76.8,48.5z"></path>
+</svg>
+
+        Spenden</button>
+<div style="padding: 20px 16px;">
+<p style="text-align: center;"><b>Bitte helfen Sie mit, dass unser Spitalvergleich werbefrei und unabhängig bleiben kann.</b></p>
+<p style="text-align: center;">Auch kleine Spenden tragen dazu bei. Vielen Dank!</p>
+<div class="row">
+<div class="col-6">
+<a href="https://www.paypal.com/donate/?hosted_button_id=PJUYN8HYAA87L" target="_blank">
+<img alt="Paypal - den unabhängigen Spitalvergleich Schweiz unterstützen" src="/img/PayPal_logo.svg" style="border:solid 2px #173283;padding:15px 9px 12px 9px;margin:0;width:140px;" title="Paypal - den unabhängigen Spitalvergleich Schweiz unterstützen"/>
+</a>
+</div>
+<div class="col-6">
+<a href="https://pay.raisenow.io/bbvtf" target="_blank"><img alt="Twint - den unabhängigen Spitalvergleich Schweiz unterstützen" src="/img/twint-logo.svg" style="float:right;" title="Twint - den unabhängigen Spitalvergleich Schweiz unterstützen" width="140"/></a>
+</div>
+</div>
+<br/>
+<p style="text-align: center;"><button class="btn btn-light" id="donate_later" type="button">Vielleicht ein anderes mal</button></p>
+</div>
+</div>
+<div id="rueck_form_container" style="max-height:410px;display:none;">
+<button id="rueck-knopf" title="Gestalten Sie den Spitalvergleich mit!" type="button">
+<svg height="20" style="margin-bottom:-4px;margin-top:-5px;" viewbox="0 0 100 44" width="30" xml:space="preserve">
+<g transform="matrix(0.95,0,0,0.95,2.48,1.84)">
+<path d="M 45.673,0 C 67.781,0 85.703,12.475 85.703,27.862 C 85.703,43.249 67.781,55.724 45.673,55.724 C 38.742,55.724 32.224,54.497 26.539,52.34 C 15.319,56.564 0,64.542 0,64.542 C 0,64.542 9.989,58.887 14.107,52.021 C 15.159,50.266 15.775,48.426 16.128,46.659 C 9.618,41.704 5.643,35.106 5.643,27.862 C 5.643,12.475 23.565,0 45.673,0 M 45.673,2.22 C 24.824,2.22 7.862,13.723 7.862,27.863 C 7.862,34.129 11.275,40.177 17.472,44.893 L 18.576,45.734 L 18.305,47.094 C 17.86,49.324 17.088,51.366 16.011,53.163 C 15.67,53.73 15.294,54.29 14.891,54.837 C 18.516,53.191 22.312,51.561 25.757,50.264 L 26.542,49.968 L 27.327,50.266 C 32.911,52.385 39.255,53.505 45.673,53.505 C 66.522,53.505 83.484,42.002 83.484,27.862 C 83.484,13.722 66.522,2.22 45.673,2.22 L 45.673,2.22 z " fill="white" stroke="white" stroke-width="5"></path>
+<circle cx="31" cy="37" fill="white" r="5" stroke="white" stroke-width="1"></circle>
+<circle cx="45" cy="37" fill="white" r="5" stroke="white" stroke-width="1"></circle>
+<circle cx="59" cy="37" fill="white" r="5" stroke="white" stroke-width="1"></circle>
+</g>
+</svg>
+<span>Feedback</span></button>
+<div class="text-center" id="rueck_form">
+<form autocomplete="off" id="rueck_form_inner" method="get">
+<div style="display:flex;align-items:center;gap:6px;">
+<p><b>Gestalten Sie den Spitalvergleich mit!</b><br/>Wie gefällt er Ihnen insgesamt?</p>
+<p style="text-align: center;"><button class="btn btn-light" id="rueck_later" type="button">Nicht jetzt</button></p>
+</div>
+<div class="umleitung collapse in small">
+                * ... für Feedback zu unserem Vergleichsportal gedacht. Falls Sie eine Bewertung zu einem Spital oder einer Klinik abgeben möchten, klicken Sie bitte <a href="/rating-spitaeler-schweiz.php"><b>hier</b></a>.   
+          </div>
+<div class="btn-group width100" id="smiley_group" role="group">
+<input class="btn-check" id="sehr_gut" name="Seiten-Feedback" type="radio" value="Gefällt mir sehr gut!"/><!-- migrate bs5 -->
+<label class="btn btn-default btn-light btn_smiley verteilen" for="sehr_gut" title="Gefällt mir sehr gut!">
+<svg class="smiley" viewbox="0 0 368 368" x="0px" xml:space="preserve" y="0px">
+<desc>Mir gefällt der Spitalvergleich sehr gut.</desc>
+<path d="M248,112c-13.232,0-24,10.768-24,24s10.768,24,24,24s24-10.768,24-24S261.232,112,248,112z M248,144        c-4.416,0-8-3.592-8-8s3.584-8,8-8c4.416,0,8,3.592,8,8S252.416,144,248,144z"></path>
+<path d="M120,160c13.232,0,24-10.768,24-24s-10.768-24-24-24s-24,10.768-24,24S106.768,160,120,160z M120,128       c4.416,0,8,3.592,8,8s-3.584,8-8,8s-8-3.592-8-8S115.584,128,120,128z"></path>
+<path d="M184,0C82.536,0,0,82.544,0,184s82.536,184,184,184s184-82.544,184-184S285.464,0,184,0z M184,352  c-92.632,0-168-75.36-168-168S91.368,16,184,16s168,75.36,168,168S276.632,352,184,352z"></path>
+<path d="M264,208H104c-4.424,0-8,3.584-8,8c0,48.52,39.48,88,88,88s88-39.48,88-88C272,211.584,268.424,208,264,208z M184,288       c-37,0-67.56-28.048-71.552-64h143.104C251.56,259.952,221,288,184,288z"></path>
+</svg>
+</label>
+<input class="btn-check" id="gut" name="Seiten-Feedback" type="radio" value="Gefällt mir gut!"/>
+<label class="btn btn-default btn-light btn_smiley verteilen" for="gut" title="Gefällt mir gut!">
+<svg class="smiley" viewbox="0 0 368 368" x="0px" xml:space="preserve" y="0px">
+<desc>Mir gefällt der Spitalvergleich gut.</desc>
+<path d="M184,0C82.544,0,0,82.544,0,184s82.544,184,184,184s184-82.544,184-184S285.456,0,184,0z M184,352c-92.64,0-168-75.36-168-168S91.36,16,184,16s168,75.36,168,168S276.64,352,184,352z"></path>
+<path d="M144,152c0-13.232-10.768-24-24-24s-24,10.768-24,24s10.768,24,24,24S144,165.232,144,152z M112,152c0-4.408,3.592-8,8-8s8,3.592,8,8s-3.592,8-8,8S112,156.408,112,152z"></path>
+<path d="M248,128c-13.232,0-24,10.768-24,24s10.768,24,24,24s24-10.768,24-24S261.232,128,248,128z M248,160c-4.408,0-8-3.592-8-8s3.592-8,8-8c4.408,0,8,3.592,8,8S252.408,160,248,160z"></path>
+<path d="M261.336,226.04c-3.296-2.952-8.36-2.664-11.296,0.624C233.352,245.312,209.288,256,184,256c-25.28,0-49.352-10.688-66.04-29.336c-2.952-3.288-8-3.576-11.296-0.624c-3.296,2.944-3.568,8-0.624,11.296C125.76,259.368,154.176,272,184,272c29.832,0,58.248-12.64,77.96-34.664C264.904,234.04,264.624,228.984,261.336,226.04z"></path>
+</svg>
+</label>
+<input class="btn-check" id="zumteil" name="Seiten-Feedback" type="radio" value="Gefällt mir zum Teil."/>
+<label class="btn btn-light btn_smiley verteilen" for="zumteil" title="Gefällt mir zum Teil.">
+<svg class="smiley" viewbox="0 0 368 368" x="0px" xml:space="preserve" y="0px">
+<desc>Mir gefällt der Spitalvergleich zum Teil.</desc>
+<path d="M184,0C82.544,0,0,82.544,0,184s82.544,184,184,184s184-82.544,184-184S285.456,0,184,0z M184,352c-92.64,0-168-75.36-168-168S91.36,16,184,16s168,75.36,168,168S276.64,352,184,352z"></path>
+<path d="M120,176c13.232,0,24-10.768,24-24s-10.768-24-24-24s-24,10.768-24,24S106.768,176,120,176z M120,144c4.408,0,8,3.592,8,8s-3.592,8-8,8s-8-3.592-8-8S115.592,144,120,144z"></path>
+<path d="M248,128c-13.232,0-24,10.768-24,24s10.768,24,24,24s24-10.768,24-24S261.232,128,248,128z M248,160c-4.408,0-8-3.592-8-8s3.592-8,8-8c4.408,0,8,3.592,8,8S252.408,160,248,160z"></path>
+<path d="M264,224H104c-4.416,0-8,3.584-8,8c0,4.416,3.584,8,8,8h160c4.416,0,8-3.584,8-8C272,227.584,268.416,224,264,224z"></path>
+</svg>
+</label>
+<input class="btn-check" id="ehernicht" name="Seiten-Feedback" type="radio" value="Gefällt mir eher nicht."/>
+<label class="btn btn-light btn_smiley verteilen" for="ehernicht" title="Gefällt mir eher nicht.">
+<svg class="smiley" viewbox="0 0 368 368" x="0px" xml:space="preserve" y="0px">
+<desc>Mir gefällt der Spitalvergleich eher nicht.</desc>
+<path d="M184,0C82.544,0,0,82.544,0,184s82.544,184,184,184c101.464,0,184-82.544,184-184S285.464,0,184,0z M184,352c-92.64,0-168-75.36-168-168S91.36,16,184,16c92.632,0,168,75.36,168,168S276.632,352,184,352z"></path>
+<path d="M144,152c0-13.232-10.768-24-24-24s-24,10.768-24,24s10.768,24,24,24S144,165.232,144,152z M112,152c0-4.408,3.592-8,8-8s8,3.592,8,8s-3.592,8-8,8S112,156.408,112,152z"></path>
+<path d="M248,128c-13.232,0-24,10.768-24,24s10.768,24,24,24s24-10.768,24-24S261.232,128,248,128z M248,160c-4.416,0-8-3.592-8-8s3.584-8,8-8c4.416,0,8,3.592,8,8S252.416,160,248,160z"></path>
+<path d="M184,224c-29.824,0-58.24,12.632-77.96,34.664c-2.944,3.296-2.664,8.352,0.624,11.296c3.296,2.952,8.352,2.664,11.296-0.624C134.648,250.688,158.72,240,184,240c25.28,0,49.352,10.688,66.04,29.336c1.576,1.768,3.768,2.664,5.96,2.664c1.896,0,3.816-0.672,5.336-2.04c3.288-2.944,3.568-8,0.624-11.296C242.24,236.64,213.832,224,184,224z"></path>
+</svg>
+</label>
+<input class="btn-check" id="garnicht" name="Seiten-Feedback" type="radio" value="Gefällt mir gar nicht!"/>
+<label class="btn btn-light btn_smiley verteilen" for="garnicht" title="Gefällt mir gar nicht!">
+<svg class="smiley" viewbox="0 0 368 368" x="0px" xml:space="preserve" y="0px">
+<desc>Der Spitalvergleich gefällt mir gar nicht.</desc>
+<path d="M184,0C82.544,0,0,82.544,0,184s82.544,184,184,184c101.464,0,184-82.544,184-184S285.464,0,184,0z M184,352c-92.64,0-168-75.36-168-168S91.36,16,184,16c92.632,0,168,75.36,168,168S276.632,352,184,352z"></path>
+<path d="M144,168c0-13.232-10.768-24-24-24s-24,10.768-24,24s10.768,24,24,24S144,181.232,144,168z M112,168c0-4.408,3.592-8,8-8s8,3.592,8,8s-3.592,8-8,8S112,172.408,112,168z"></path>
+<path d="M248,144c-13.232,0-24,10.768-24,24s10.768,24,24,24s24-10.768,24-24S261.232,144,248,144z M248,176c-4.416,0-8-3.592-8-8s3.584-8,8-8c4.416,0,8,3.592,8,8S252.416,176,248,176z"></path>
+<path d="M216.008,112c1.2,0,2.424-0.272,3.568-0.84l32-16c3.952-1.976,5.552-6.784,3.576-10.736c-1.984-3.952-6.792-5.56-10.736-3.576l-32,16c-3.952,1.976-5.552,6.784-3.576,10.736C210.248,110.384,213.072,112,216.008,112z"></path>
+<path d="M116.424,95.16l32,16c1.144,0.568,2.368,0.84,3.568,0.84c2.936,0,5.76-1.616,7.168-4.424c1.976-3.952,0.376-8.76-3.576-10.736l-32-16c-3.968-1.984-8.76-0.368-10.736,3.576C110.864,88.376,112.472,93.176,116.424,95.16z"></path>
+<path d="M184,224c-29.832,0-58.248,12.64-77.96,34.664c-2.944,3.296-2.664,8.352,0.624,11.296c3.296,2.952,8.352,2.664,11.296-0.624C134.648,250.688,158.712,240,184,240c25.272,0,49.344,10.688,66.04,29.336c1.576,1.768,3.768,2.664,5.96,2.664c1.904,0,3.816-0.672,5.336-2.04c3.288-2.952,3.568-8,0.624-11.296
+C242.232,236.632,213.824,224,184,224z"></path>
+</svg>
+</label>
+</div>
+<div class="texteingabe collapse">
+<p style="margin-top: 2vh;">Teilen Sie uns doch bitte mit ...</p>
+<div class="btn-group width100" data-toggle="buttons">
+<input checked="" class="btn-check" id="Anregung" name="betrifft" type="radio" value="Anregung"/>
+<label class="btn btn-light btn_bereich verteilen" for="Anregung" id="zeig_anregung">Anregungen</label>
+<input class="btn-check" id="Probleme" name="betrifft" type="radio" value="Probleme"/>
+<label class="btn btn-light btn_bereich verteilen" for="Probleme" id="zeig_probleme">Probleme</label>
+<input class="btn-check" id="Sonstiges" name="betrifft" type="radio" value="Sonstiges"/>
+<label class="btn btn-light btn_bereich verteilen" for="Sonstiges" id="zeig_sonstiges">Sonstiges</label>
+</div>
+<div class="form-group felder">
+<textarea class="form-control collapse" id="sonstiges" name="Sonstiges" placeholder="Bitte teilen Sie sie uns Ihre Gedanken mit. Wir schätzen Ihr Feedback um den Spitalvergleich zu verbessern. Wenn Sie eine Reaktion wünschen, vergessen Sie Ihre Email nicht. Wir melden uns bei Ihnen." rows="4"></textarea>
+<textarea class="form-control collapse" id="probleme" name="Probleme" placeholder="Es tut uns leid, dass Sie Probleme hatten. Bitte beschreiben Sie sie, damit wir sie beheben können. Wenn Sie eine Reaktion wünschen, vergessen Sie Ihre Email nicht. Wir melden uns bei Ihnen." rows="4"></textarea>
+<textarea class="form-control collapse show" id="anregung" name="Anregung" placeholder="Ihre Anregungen und Ideen sind uns wichtig. Wir versuchen, sie umzusetzen. Wenn Sie eine Reaktion wünschen, vergessen Sie bitte Ihre Email nicht. Wir melden uns bei Ihnen." rows="4"></textarea>
+</div>
+<div class="btn btn-success m-t-3" id="abschicken" style="margin-top:1vh;width:100%">Ihre Rückmeldung abschicken</div>
+</div>
+</form>
+</div>
+</div>
+<footer>
+<hr style="margin-top:18px; margin-bottom:0;"/>
+<div class="subfooter">
+<div class="container auto3spalten">
+<p><a href="/disclaimer.php" style="color:#CCCCCC;">Haftungsausschluss</a></p>
+<p><a href="/privacy.php" style="color:#CCCCCC;">Datenschutz</a></p>
+<p>© Verein Spitalvergleich Schweiz, Zürich</p>
+</div>
+</div>
+</footer><script src="/js/jquery.fancybox.de.min.js"></script>
+<script src="/js/hosp_det_page.js"></script>
+</body></html>
