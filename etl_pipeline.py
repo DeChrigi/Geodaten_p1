@@ -28,6 +28,7 @@ def transformHospitalData():
 
     # Delete Records with missing PLZ
     df_cleaned = df.query("PLZ != 'Nicht gefunden'")
+    
     df_cleaned['Latitude'] = None
     df_cleaned['Longitude'] = None
     print('Length without Missing values: ', len(df_cleaned))
@@ -46,11 +47,12 @@ def transformHospitalData():
         df_cleaned.at[index, 'Latitude'] = latitude
         df_cleaned.at[index, 'Longitude'] = longitude
 
-    # Umwandeln der Datentypen
+    # Typumwandlungen mit Bereinigung
+    df_cleaned = df_cleaned[pd.to_numeric(df_cleaned['PLZ'], errors='coerce').notna()]
+    df_cleaned['PLZ'] = df_cleaned['PLZ'].astype(int)
     df_cleaned['Krankenhaus'] = df_cleaned['Krankenhaus'].astype(str)
     df_cleaned['Adresse'] = df_cleaned['Adresse'].astype(str)
     df_cleaned['Ort'] = df_cleaned['Ort'].astype(str)
-    df_cleaned['PLZ'] = df_cleaned['PLZ'].astype(int)
     df_cleaned['Latitude'] = df_cleaned['Latitude'].astype(float)
     df_cleaned['Longitude'] = df_cleaned['Longitude'].astype(float)
 
@@ -85,12 +87,13 @@ def transformSchoolData():
         df_cleaned.at[index, 'Latitude'] = latitude
         df_cleaned.at[index, 'Longitude'] = longitude
 
-    # Umwandeln der Datentypen
+    # Typumwandlungen mit Bereinigung
+    df_cleaned = df_cleaned[pd.to_numeric(df_cleaned['PLZ'], errors='coerce').notna()]
+    df_cleaned['PLZ'] = df_cleaned['PLZ'].astype(int)
     df_cleaned['Schulname'] = df_cleaned['Schulname'].astype(str)
     df_cleaned['Schultyp'] = df_cleaned['Schulname'].astype(str)
     df_cleaned['Adresse'] = df_cleaned['Adresse'].astype(str)
     df_cleaned['Ort'] = df_cleaned['Ort'].astype(str)
-    df_cleaned['PLZ'] = df_cleaned['PLZ'].astype(int)
     df_cleaned['Latitude'] = df_cleaned['Latitude'].astype(float)
     df_cleaned['Longitude'] = df_cleaned['Longitude'].astype(float)
 
