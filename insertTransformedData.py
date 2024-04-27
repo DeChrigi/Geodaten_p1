@@ -1,7 +1,7 @@
 import DBHandler as db
 
-db.saveHospitalsToDbTransformed()
+# db.saveHospitalsToDbTransformed()
 
-db.saveSchoolsToDbTransformed()
+# db.saveSchoolsToDbTransformed()
 
 db.saveOevToDbTransformed()

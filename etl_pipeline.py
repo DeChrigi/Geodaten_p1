@@ -125,7 +125,7 @@ def transformOevData():
         print("Longitude:", lon)
 
         df.at[index, "Longitude"] = lon
-        df.at[index, "Langitude"] = lat
+        df.at[index, "Latitude"] = lat
 
     df["Longitude"] = df["Longitude"].astype(float)
     df["Latitude"] = df["Latitude"].astype(float)
