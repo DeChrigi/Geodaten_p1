@@ -11,6 +11,7 @@ def scrape_schools(url):
 
     for school in schools:
         school_name = school.find('h3', class_='post__title').find('a').get_text().strip()
+        print('Retrieving School: ', school_name)
         school_infos_uncleansed = school.find('p', class_='post__perex').get_text()
 
         start_index_type = school_infos_uncleansed.find(":") + 2

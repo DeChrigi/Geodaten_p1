@@ -23,6 +23,7 @@ def scrape_all_hospitals_return_asDf():
         if hospital_url_base:
             hospital_url = hospital_url_base['href']
             hospital_name = hospital_url_base.get_text()
+            print('Retrieving Hospital: ', hospital_name)
             subsite = base_url + hospital_url
 
             response_details = requests.get(subsite)
