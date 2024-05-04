@@ -1,5 +1,6 @@
 import DBHandler as db
 
-db.saveHospitalsToDbRaw()
-db.saveOevToDbRaw()
-db.saveSchoolsToDbRaw()
+#db.saveHospitalsToDbRaw()
+#db.saveOevToDbRaw()
+#db.saveSchoolsToDbRaw()
+db.saveAllPLZToDbRaw()

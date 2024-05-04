@@ -1,7 +1,7 @@
 import DBHandler as db
 import pandas as pd
 from geopy.geocoders import Nominatim
-from pyproj import Proj, transform
+from pyproj import Proj, transform, Transformer
 
 geolocator = Nominatim(user_agent="geocoding_hospitals_dechrigi")
 
@@ -100,26 +100,21 @@ def transformSchoolData():
     return df_cleaned
 
 def transformOevData():
-
     # Definiere die Projektionen
-    # CH1903/LV03
-    proj_ch1903 = Proj('+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 '
-                   '+k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel '
-                   '+towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs')
-    
-    # WGS84
-    proj_wgs84 = Proj(proj='latlong', datum='WGS84')
+    # CH1903+ / LV95 zu WGS84 Transformation
+    transformer = Transformer.from_crs("epsg:2056", "epsg:4326", always_xy=True)
 
+    # Daten aus der Datenbank abrufen
     df = db.retrieveOevDataRaw()
 
+    # Initiale Spalten für Ergebnisse hinzufügen
     df['Latitude'] = None
     df['Longitude'] = None
 
+    # Durchführen der Koordinatentransformation für jeden Datensatz
     for index, row in df.iterrows():
-        e = row["E"]
-        n = row["N"]
-    
-        lon, lat = transform(proj_ch1903, proj_wgs84, e, n)
+        e, n = row["E"], row["N"]
+        lon, lat = transformer.transform(e, n)
 
         print("Latitude:", lat)
         print("Longitude:", lon)
@@ -127,6 +122,7 @@ def transformOevData():
         df.at[index, "Longitude"] = lon
         df.at[index, "Latitude"] = lat
 
+    # Typkonvertierung der neuen Spalten zu float für korrekte Darstellung und Berechnung
     df["Longitude"] = df["Longitude"].astype(float)
     df["Latitude"] = df["Latitude"].astype(float)
 
