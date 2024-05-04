@@ -73,6 +73,14 @@ def retrieveOevDataFinalZH():
     df = pd.read_sql("SELECT * FROM oev_final_zh", engine)
     return df
 
+def retrieveSchoolDataFinalZH():
+    df = pd.read_sql("SELECT * FROM schools_final_zh", engine)
+    return df
+
+def retrieveHospitalDataFinalZH():
+    df = pd.read_sql("SELECT * FROM hospitals_final_zh", engine)
+    return df
+
 def saveOevInHospitalIsochronesZH():
     df = gisc.calculateOevInHospitalIsochronesZH()
     df.to_sql('oev_in_hospital_isochrones_zh', con=engine, if_exists='append', index=False)
