@@ -106,10 +106,6 @@ def get_map_isochrones_schools():
     for index, school in schools_zh.iterrows():
         folium.Marker([school["Latitude"], school["Longitude"]], popup=school["Schulname"], icon=folium.Icon(color='green', icon='school', prefix='fa')).add_to(folium_map)
 
-    folium.Polygon(locations=[(46.9480, 7.4480), (46.9485, 7.4485), (46.9475, 7.4490)], 
-                   color='blue', 
-                   fill=True,
-                   fill_color='cyan').add_to(folium_map)
     
     folium_map = add_oev_markers(folium_map)
 
@@ -133,6 +129,19 @@ def update_map():
 
     map_html = folium_map._repr_html_()
     return jsonify(map_html=map_html)
+
+
+@app.route('/update_table', methods=['POST'])
+def get_table():
+    selected_value = request.json['data'][0]
+    if selected_value == 'Krankenhäuser':
+        df = db.retrieveOevInHospitalIsochronesZHEnriched()  # Angenommen, diese Funktion gibt einen DataFrame zurück
+    elif selected_value == 'Schulen':
+        df = db.retrieveOevInSchoolsIsochronesZHEnriched()
+    else:
+        df = pd.DataFrame()
+
+    return jsonify(table_html=df.to_html(classes='table table-striped'))
 
 if __name__ == '__main__':
     app.run(debug=True)

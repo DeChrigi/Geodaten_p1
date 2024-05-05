@@ -90,3 +90,11 @@ def saveOevInSchoolIsochronesZH():
     df = gisc.calculateOevInSchoolIsochronesZH()
     df.to_sql('oev_in_school_isochrones_zh', con=engine, if_exists='append', index=False)
     print('Inserting Oev in School-Isochrones finished')
+
+def retrieveOevInHospitalIsochronesZHEnriched():
+    df = pd.read_sql("SELECT * FROM oev_in_hospitals_isochrones_zh_no_dupl_enriched", engine)
+    return df
+
+def retrieveOevInSchoolsIsochronesZHEnriched():
+    df = pd.read_sql("SELECT * FROM oev_in_schools_isochrones_zh_no_dupl_enriched", engine)
+    return df
