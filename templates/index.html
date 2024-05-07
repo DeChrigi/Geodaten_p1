@@ -1,29 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Öffentliche Gebäude Erreichbarkeit-Analyse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        #map-container {
+        #map-container, #table-container {
             width: 80%;
-            height: 600px !important;  /* oder eine andere Höhe, je nach Bedarf */
-            margin-left:auto;
-            margin-right:auto;
+            margin: auto;
+            height: 600px; /* Nur für die Karte */
         }
-
-        #table-container {
-            width: 80%;
-            margin-left:auto;
-            margin-right:auto;
-        }
-
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
             $('#data-select').change(function() {
-                var selectedData = $(this).val();  // Die ausgewählten Werte als Array
+                var selectedData = $(this).val();
                 $.ajax({
                     url: '/update_map',
                     type: 'POST',
@@ -33,14 +27,13 @@
                     success: function(response) {
                         $('#map-container').html(response.map_html);
                         $('#map-container iframe').css({
-                            'border': 'none', // Beispiel: Rahmen entfernen
-                            'height': '600px' // Höhe einstellen
-                            // Weitere CSS-Anpassungen hier
+                            'border': 'none',
+                            'height': '100%'
                         });
                     }
                 });
                 $.ajax({
-                     url: '/update_table',
+                    url: '/update_table',
                     type: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify({ 'data': selectedData }),
@@ -53,20 +46,28 @@
         });
     </script>
 </head>
-<body>
-    <h1>Öffentliche Gebäude Erreichbarkeit-Analyse</h1>
-
-    <select id="data-select" multiple>
-        <option value="Schulen">Schulen</option>
-        <option value="Krankenhäuser">Krankenhäuser</option>
-    </select>
-    
-    <div id="map-container">
-        <!-- Hier wird die Tabelle eingefügt -->
-    </div>
-    <br>
-    <div id="table-container">
-        <!-- Hier wird die Tabelle eingefügt -->
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="mb-3">Öffentliche Gebäude Erreichbarkeit-Analyse</h1>
+        <div class="row">
+            <div class="col-12 mb-3">
+                <select id="data-select" multiple class="form-select">
+                    <option value="Schulen">Schulen</option>
+                    <option value="Krankenhäuser">Krankenhäuser</option>
+                </select>
+            </div>
+            <div class="col-12 mb-3">
+                <div id="map-container" class="shadow-sm">
+                    <!-- Hier wird die Karte eingefügt -->
+                </div>
+            </div>
+            <br>
+            <div class="col-12">
+                <div id="table-container" class="shadow-sm">
+                    <!-- Hier wird die Tabelle eingefügt -->
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
