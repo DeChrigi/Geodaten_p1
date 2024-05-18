@@ -35,5 +35,15 @@ Die Datei qgis teil.qgz berechnet die Isochronen und speichert diese wiederum zu
 Danach werden die Anzahl ÖV-Stationen in den Isochronen berechnet in der Datei
 - gis_calculations.py
 und wieder zurück in die Postgres gespeichert.
+- oev_in_hospitals_isochrones
+- oev_in_schools_isochrones
 
-Schlussendlich werden die Daten im Frontend visualisiert mit einer Karte und Tabelle. Zusätzlich wurde eine Tableau Arbeitsmappe erstellt um die Resultate genauer auszuwerten
+Danach werden noch Duplikate entfernt:
+- oev_in_hospitals_isochrones_no_dupl
+- oev_in_schools_isochrones_no_dupl
+
+Schlussendlich werden die Daten noch angereichert
+- oev_in_hospitals_isochrones_no_dupl_enriched
+- oev_in_schools_isochrones_no_dupl_enriched
+
+und im Frontend visualisiert mit einer Karte und Tabelle. Zusätzlich wurde eine Tableau Arbeitsmappe erstellt um die Resultate genauer auszuwerten
